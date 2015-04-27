@@ -4,12 +4,12 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'neighborhood/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "neighborhood"
+  spec.name          = "Neighborhood"
   spec.version       = Neighborhood::VERSION
   spec.authors       = ["Sean C Davis"]
   spec.email         = ["scdavis41@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{Add address fields (and geocoding) to your rails models}
+  spec.description   = %q{}
   spec.homepage      = ""
   spec.license       = "MIT"
 

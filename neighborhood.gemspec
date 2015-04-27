@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'neighborhood/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "Neighborhood"
+  spec.name          = "neighborhood"
   spec.version       = Neighborhood::VERSION
   spec.authors       = ["Sean C Davis"]
   spec.email         = ["scdavis41@gmail.com"]

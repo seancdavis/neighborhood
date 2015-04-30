@@ -2,7 +2,7 @@ require 'geocoder'
 
 class << ActiveRecord::Base
 
-  def in_the_neighborhood
+  def in_the_neighborhood(options = {})
     geocoded_by :address, :latitude  => :lat, :longitude => :lng
 
     after_validation :geocode_if_address
@@ -23,9 +23,11 @@ class << ActiveRecord::Base
             :full_address => geo['formatted_address'],
           }
           # set country if necessary
-          country = geo['address_components']
-            .select { |a| a['types'].include?('country') }.first['long_name']
-          attrs[:country] = country if country.present?
+          unless options[:autoset_country] == false
+            country = geo['address_components']
+              .select { |a| a['types'].include?('country') }.first['long_name']
+            attrs[:country] = country if country.present?
+          end
           # save attributes
           update_columns(attrs)
         end

@@ -24,7 +24,7 @@ class NeighborhoodGenerator < Rails::Generators::Base
     generate "migration #{migration_name} #{database_fields}"
     insert_into_file(
       Dir.glob("#{Rails.root}/db/migrate/*.rb").last,
-      ", :precision => 7, :scale => 5",
+      ", :precision => 9, :scale => 6",
       :after => /\:l(at|ng), \:decimal/
     )
   end
